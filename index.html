@@ -11,8 +11,8 @@
 <body>
 
     <div id="TheRminal" class="container-fluid p-4 hack-font d-flex">
-        <div class="col-2"> 
-            <h1 class="fs-5 m-0 border ps-2 py-1">The Rminal</h1>
+        <div class="col-2 border border-1"> 
+            <h1 class="fs-5 m-0 border-bottom ps-2 py-1">The Rminal</h1>
             <div>
                 <ul class="p-0">
                     <li><i class="fa-solid fa-terminal"></i>Terminal</li>
@@ -23,13 +23,18 @@
         </div>
         <div class="col-10 border border-1 position-relative">
             <div>
-                <textarea placeholder="..." class="w-100 bg-transparent position-absolute bottom-0 border-0 shadow-none"></textarea>
-                <i class="fa-solid fa-terminal position-absolute pre-writing"></i>
+                <ul class="p-1">
+                    <li class="border-0 m-0 p-0" v-for="(commands, index) in historyChat">{{commands}}</li>
+                </ul>
+                <div class="d-flex p-1">
+                    <p>Last login: Sat Aug 31 12:31:09 {{character.userName}}@{{character.machineName}} ~ %</p><i class="fa-solid fa-terminal pre-writing"></i>
+                    <textarea placeholder="..." class="bg-transparent border-0 shadow-none flex-grow-1" v-model="textInput" @keyup.enter="tryCmd()"></textarea>
+                </div>
             </div>
         </div>
          
     </div>
-    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="assets/js/vue.js"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="assets/js/vue.js"></script>
 </body>
 </html>

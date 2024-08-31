@@ -1,0 +1,97 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: #27941f;
+}
+
+ul {
+    list-style-type: none;
+    margin:0;
+}
+
+li {
+    padding-left: .5rem !important;
+    padding-bottom:5px;
+    margin:10px 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+}
+
+li:hover {
+    cursor:pointer;
+}
+
+textarea {
+    height:23px;
+    color:rgba(128, 128, 128, 0.8);
+    font-size:0.8rem;
+    padding: 0 5px;
+    resize: none;
+}
+
+textarea:focus{
+    border: 0 none #FFF;
+    overflow: hidden;
+    outline:none;
+}
+
+li > i {
+    font-size:12px;
+    margin:0 5px;
+}
+
+#TheRminal {
+
+}
+
+.TR-p-08 {
+    font-size:0.8rem;
+}
+
+.col-2.border {
+    border-color:gray !important;
+}
+
+.col-2 > h1:first-child {
+    border-color:gray !important;
+}
+
+.col-10.border {
+    border-color:gray !important;
+    height:90dvh;
+    scrollbar-width: none;
+}
+
+.hack-font {
+    font-family: 'hack', Courier, monospace;
+}
+
+.gray-color {
+    color:rgba(128, 128, 128, 0.4);
+}
+
+.idling {
+    animation: lampeggia 1s infinite;
+}
+
+/* Query */
+@font-face {
+    font-family: 'Hack'; /*a name to be used later*/
+    src: url('./fonts/Hack-Regular.ttf'); /*URL to font*/
+}
+
+@keyframes lampeggia {
+    0% { 
+        opacity: 1;
+    }
+    50% { 
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

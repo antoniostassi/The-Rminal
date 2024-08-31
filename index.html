@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rminal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div id="TheRminal" class="container-fluid p-4 hack-font d-flex">
+        <div class="col-2 border border-1" @click="idling=true"> 
+            <h1 class="fs-5 m-0 border-bottom ps-2 py-1">The Rminal</h1>
+            <div>
+                <ul class="p-0">
+                    <li><i class="fa-solid fa-terminal"></i>Terminal</li>
+                    <li><i class="fa-solid fa-user-secret" style="margin-right:7.8px;"></i>Character</li>
+                    <li><i class="fa-solid fa-mask"></i>Quests</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-10 border border-1 position-relative TR-p-08 overflow-y-auto">
+            <div>
+                <ul class="p-2">
+                    <li class="border-0 m-0 p-0" v-for="(commands, index) in historyChat">{{commands}}</li>
+                </ul>
+                <div class="d-flex p-2">
+                    <p>{{terminal}} ~ % 
+                        <i :class="idling == true ? 'idling':'' "class="fa-solid fa-terminal gray-color"></i>
+                    </p>
+                    <textarea placeholder="..." class="bg-transparent border-0 shadow-none flex-grow-1" v-model="textInput" @click="idling=false" @keyup.enter="tryCmd()"></textarea>
+                </div>
+            </div>
+        </div>
+         
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="assets/js/vue.js"></script>
+</body>
+</html>

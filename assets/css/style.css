@@ -9,10 +9,69 @@ body {
     color: #27941f;
 }
 
+ul {
+    list-style-type: none;
+    margin:0;
+}
+
+li {
+    padding-left: .5rem !important;
+    padding-bottom:5px;
+    margin:10px 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+}
+
+li:hover {
+    cursor:pointer;
+}
+
+textarea {
+    height:23px;
+    color:white;
+    font-size:0.8rem;
+    padding: 0 25px;
+}
+
+textarea:focus{
+    border: 0 none #FFF;
+    overflow: hidden;
+    outline:none;
+}
+
+li > i {
+    font-size:12px;
+    margin:0 5px;
+}
+
 #TheRminal {
 
 }
 
-#TheRminal > h1:first-child {
-    border-color:gray;
+.col-2 {
+    border:1px solid gray;
+}
+
+.col-2 > h1:first-child {
+    border-color:gray !important;
+}
+
+.col-10.border {
+    border-color:gray !important;
+    height:90dvh;
+}
+
+.hack-font {
+    font-family: 'hack', Courier, monospace;
+}
+
+.pre-writing {
+    bottom:6px;
+    margin-left:5px;
+    color:rgba(128, 128, 128, 0.4);
+}
+
+/* Query */
+@font-face {
+    font-family: 'Hack'; /*a name to be used later*/
+    src: url('./fonts/Hack-Regular.ttf'); /*URL to font*/
 }

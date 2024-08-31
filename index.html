@@ -10,11 +10,23 @@
 </head>
 <body>
 
-    <div id="TheRminal" class="container-fluid p-4">
-        <div class="col-3 border border-1 border-warning"> 
-            <h1 class="fs-4 m-0 border border-1 ps-2">The Rminal</h1>
+    <div id="TheRminal" class="container-fluid p-4 hack-font d-flex">
+        <div class="col-2"> 
+            <h1 class="fs-5 m-0 border ps-2 py-1">The Rminal</h1>
+            <div>
+                <ul class="p-0">
+                    <li><i class="fa-solid fa-terminal"></i>Terminal</li>
+                    <li><i class="fa-solid fa-user-secret" style="margin-right:7.8px;"></i>Character</li>
+                    <li><i class="fa-solid fa-mask"></i>Quests</li>
+                </ul>
+            </div>
         </div>
-        <div class="col-9"></div>
+        <div class="col-10 border border-1 position-relative">
+            <div>
+                <textarea placeholder="..." class="w-100 bg-transparent position-absolute bottom-0 border-0 shadow-none"></textarea>
+                <i class="fa-solid fa-terminal position-absolute pre-writing"></i>
+            </div>
+        </div>
          
     </div>
     <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

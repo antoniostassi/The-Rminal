@@ -27,7 +27,7 @@
                     <li class="border-0 m-0 p-0" v-for="(commands, index) in historyChat">{{commands}}</li>
                 </ul>
                 <div class="d-flex p-1">
-                    <p>Last login: Sat Aug 31 12:31:09 {{character.userName}}@{{character.machineName}} ~ % 
+                    <p>{{terminal}} ~ % 
                         <i :class="idling == true ? 'idling':'' "class="fa-solid fa-terminal gray-color"></i>
                     </p>
                     <textarea placeholder="..." class="bg-transparent border-0 shadow-none flex-grow-1" v-model="textInput" @click="idling=false" @keyup.enter="tryCmd()"></textarea>

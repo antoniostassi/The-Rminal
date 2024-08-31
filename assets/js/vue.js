@@ -10,10 +10,12 @@ const appCreation = createApp({
         ],
         textInput: "",
         character: {
+            lastLogin: "Sat Aug 31 12:31:09",
             userName: "antoniostassi",
-            machineName: "TheRminal"
+            machineName: "apple-m3"
         },
-        idling: true 
+        idling: true,
+        terminal: ""
         }
     },
     methods: {
@@ -27,7 +29,13 @@ const appCreation = createApp({
         },
         sendCmd(input) {
             this.historyChat.push(input);
+        },
+        createTerminal() {
+            this.terminal = "Last login: "+(this.character.lastLogin)+" "+this.character.userName+"@"+this.character.machineName;
         }
+    },
+    mounted() {
+        this.createTerminal();
     }
 }).mount('#TheRminal')
 

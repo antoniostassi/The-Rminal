@@ -47,6 +47,10 @@ li > i {
 
 }
 
+.TR-p-08 {
+    font-size:0.8rem;
+}
+
 .col-2.border {
     border-color:gray !important;
 }
@@ -64,13 +68,28 @@ li > i {
     font-family: 'hack', Courier, monospace;
 }
 
-.pre-writing {
-    margin-left:5px;
+.gray-color {
     color:rgba(128, 128, 128, 0.4);
+}
+
+.idling {
+    animation: lampeggia 1s infinite;
 }
 
 /* Query */
 @font-face {
     font-family: 'Hack'; /*a name to be used later*/
     src: url('./fonts/Hack-Regular.ttf'); /*URL to font*/
+}
+
+@keyframes lampeggia {
+    0% { 
+        opacity: 1;
+    }
+    50% { 
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

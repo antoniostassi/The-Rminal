@@ -11,7 +11,7 @@
 <body>
 
     <div id="TheRminal" class="container-fluid p-4 hack-font d-flex">
-        <div class="col-2 border border-1"> 
+        <div class="col-2 border border-1" @click="idling=true"> 
             <h1 class="fs-5 m-0 border-bottom ps-2 py-1">The Rminal</h1>
             <div>
                 <ul class="p-0">
@@ -21,14 +21,16 @@
                 </ul>
             </div>
         </div>
-        <div class="col-10 border border-1 position-relative">
+        <div class="col-10 border border-1 position-relative TR-p-08">
             <div>
                 <ul class="p-1">
                     <li class="border-0 m-0 p-0" v-for="(commands, index) in historyChat">{{commands}}</li>
                 </ul>
                 <div class="d-flex p-1">
-                    <p>Last login: Sat Aug 31 12:31:09 {{character.userName}}@{{character.machineName}} ~ %</p><i class="fa-solid fa-terminal pre-writing"></i>
-                    <textarea placeholder="..." class="bg-transparent border-0 shadow-none flex-grow-1" v-model="textInput" @keyup.enter="tryCmd()"></textarea>
+                    <p>Last login: Sat Aug 31 12:31:09 {{character.userName}}@{{character.machineName}} ~ % 
+                        <i :class="idling == true ? 'idling':'' "class="fa-solid fa-terminal gray-color"></i>
+                    </p>
+                    <textarea placeholder="..." class="bg-transparent border-0 shadow-none flex-grow-1" v-model="textInput" @click="idling=false" @keyup.enter="tryCmd()"></textarea>
                 </div>
             </div>
         </div>

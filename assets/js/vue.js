@@ -12,7 +12,8 @@ const appCreation = createApp({
         character: {
             userName: "antoniostassi",
             machineName: "TheRminal"
-        }
+        },
+        idling: true 
         }
     },
     methods: {

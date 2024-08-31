@@ -27,6 +27,11 @@ const appCreation = createApp({
                 function:"clearChat()",
                 description:"Clear the chat logs"
             },
+            {
+                trigger:"github",
+                function:"printSomething('JS Developer: https://github.com/antoniostassi','Illustrator: https://github.com/margheritamottana')",
+                description:"Creators of The Rminal"
+            }
         ],
         commandFound: false
         
@@ -49,11 +54,19 @@ const appCreation = createApp({
         createTerminal() {
             this.terminal = "Last login: "+(this.character.lastLogin)+" "+this.character.userName+"@"+this.character.machineName;
         },
+        printSomething(arg, arg2, arg3, arg4) {
+            this.historyChat.push("---------------");
+            this.historyChat.push(arg);
+            this.historyChat.push(arg2);
+            this.historyChat.push(arg3);
+            this.historyChat.push(arg4);
+        },
         clearChat() {
             this.historyChat = [];
             console.log("Chat has been cleaned.");
         },
         help() {
+            this.historyChat.push("---------------");
             this.commands.forEach(element => {
                 this.historyChat.push(element.trigger + " | " + element.description);
             });

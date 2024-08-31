@@ -63,6 +63,7 @@ li > i {
 .col-10.border {
     border-color:gray !important;
     height:90dvh;
+    scrollbar-width: none;
 }
 
 .hack-font {

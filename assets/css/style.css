@@ -1,0 +1,18 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: #27941f;
+}
+
+#TheRminal {
+
+}
+
+#TheRminal > h1:first-child {
+    border-color:gray;
+}

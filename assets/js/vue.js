@@ -52,10 +52,10 @@ const appCreation = createApp({
             "C:/": {
                 contents:"Applications, Music, Downloads, Documents"
             },
-            "C:/applications": {
+            "C:/applications/": {
                 contents: "Github-Desktop.exe, VisualStudioCode.exe, DonkeyKong.exe, newfolder"
             },
-            "C:/applications/newfolder": {
+            "C:/applications/newfolder/": {
                 contents: "Github-Desktop"
             }
         }
@@ -66,9 +66,7 @@ const appCreation = createApp({
     },
     methods: {
         tryCmd() {
-            this.historyChat.push("---------------");
             this.historyChat.push(this.terminal + " ~ % " + this.textInput);
-            this.historyChat.push("---------------");
             
             let firstWordCommand = this.textInput.match(/\w+/g)[0];
             this.commands.forEach(element => {
@@ -85,7 +83,7 @@ const appCreation = createApp({
             this.textInput = "";
         },
         createTerminal() {
-            this.terminal = "Last login: "+(this.character.lastLogin)+" "+this.character.userName+"@"+this.character.machineName;
+            this.terminal = (this.character.lastLogin)+" "+this.character.userName+"@"+this.character.machineName;
         },
         printSomething(arg, arg2, arg3, arg4) {
             this.historyChat.push(arg);
@@ -109,32 +107,29 @@ const appCreation = createApp({
             const newDir = directory.match(/\w+/g)[1]; // Selezione la prima parola subito dopo il "cd";
             const actualDir = this.directoryContents[this.currentDir].contents.toLowerCase(); // Variabile contentente i contents della directory attuale
             if (directory.trim() == "cd ..") {
+
+                this.currentDir = this.currentDir.slice(0, -1); // Rimuove l'ultimo " / "
                 const slashes = (this.currentDir.split("/").length - 1); //3
 
                 const previousDir = []; // Array per salvare ogni singola cartella del percorso
                 for(let i=0; i<slashes; i++){
                     previousDir[i] = this.currentDir.trim().split('/')[i]; // Prendi ad uno ad uno le cartelle prima di ogni " / "
                 }
-                //console.table(previousDir);
 
                 this.currentDir = ""; // Reinizializza la directory
                 previousDir.forEach(value => { // Per ogni cartella delle cartelle della directory
                     this.currentDir += value + "/"; // Inseriscile ad 1 ad 1 nella current Directory
                 }); // Fino a formare la directory giusta
 
-                //console.table(previousDir);
-                //console.log(this.currentDir);
-                if (this.currentDir.length > 3){ // Se il percorso non è C:/
-                    this.currentDir = this.currentDir.slice(0, -1); // Rimuove l'ultimo " / "
-                }
                 this.historyChat.push("Current Directory: "+ this.currentDir);
             }
-            else if(this.isMatch(actualDir, newDir.toLowerCase())) {
-                this.currentDir += "/"+newDir.toLowerCase();
-                this.currentDir = this.currentDir.replace("C://", "C:/");
+            else if(this.isMatch(actualDir, newDir.toLowerCase()) && (!directory.trim().includes(".exe"))) {
+                this.currentDir += "/"+newDir.toLowerCase()+"/";
+                this.currentDir = this.currentDir.replace("//", "/");
                 this.historyChat.push("Current Directory: "+ this.currentDir);
             } else {
-                this.historyChat.push("Directory: "+ this.currentDir + newDir + " does not exists!");
+                const errorString = directory.replace("cd ", "");
+                this.historyChat.push("Directory: "+ this.currentDir + errorString + " does not exists or is not a directory!");
                 this.textInput = '';
             };
         },

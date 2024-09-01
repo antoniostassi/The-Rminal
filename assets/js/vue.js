@@ -130,7 +130,7 @@ const appCreation = createApp({
                 this.historyChat.push("Current Directory: "+ this.currentDir);
             }
             else if(this.isMatch(actualDir, newDir.toLowerCase())) {
-                this.currentDir += "/"+newDir;
+                this.currentDir += "/"+newDir.toLowerCase();
                 this.currentDir = this.currentDir.replace("C://", "C:/");
                 this.historyChat.push("Current Directory: "+ this.currentDir);
             } else {

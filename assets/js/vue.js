@@ -83,7 +83,7 @@ const appCreation = createApp({
             this.textInput = "";
         },
         createTerminal() {
-            this.terminal = "Last login: "+(this.character.lastLogin)+" "+this.character.userName+"@"+this.character.machineName;
+            this.terminal = (this.character.lastLogin)+" "+this.character.userName+"@"+this.character.machineName;
         },
         printSomething(arg, arg2, arg3, arg4) {
             this.historyChat.push(arg);

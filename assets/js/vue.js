@@ -115,15 +115,11 @@ const appCreation = createApp({
                 for(let i=0; i<slashes; i++){
                     previousDir[i] = this.currentDir.trim().split('/')[i]; // Prendi ad uno ad uno le cartelle prima di ogni " / "
                 }
-                //console.table(previousDir);
 
                 this.currentDir = ""; // Reinizializza la directory
                 previousDir.forEach(value => { // Per ogni cartella delle cartelle della directory
                     this.currentDir += value + "/"; // Inseriscile ad 1 ad 1 nella current Directory
                 }); // Fino a formare la directory giusta
-
-                //console.table(previousDir);
-                //console.log(this.currentDir);
 
                 this.historyChat.push("Current Directory: "+ this.currentDir);
             }

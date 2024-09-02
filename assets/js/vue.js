@@ -40,20 +40,25 @@ const appCreation = createApp({
             {
                 trigger:"cd",
                 function:"cd(this.textInput)",
-                description:"Navigate inside a folder/directory"
+                description:"Syntax 'cd <foldername>' navigate inside a folder/directory, 'cd ..' to go back."
             },
             {
                 trigger:"dir",
                 function:"printSomething(this.currentDir);",
                 description:"Print your current directory"
+            },
+            {
+                trigger:"mkdir",
+                function:"mkdir(this.textInput.trim())",
+                description:"Syntax 'mkdir <foldername>' creates a folder"
             }
         ],
         directoryContents: {
             "C:/": {
-                contents:"Applications, Music, Downloads, Documents"
+                contents:"Applications  Music  Downloads  Documents"
             },
             "C:/applications/": {
-                contents: "Github-Desktop.exe, VisualStudioCode.exe, DonkeyKong.exe, newfolder"
+                contents: "Github-Desktop.exe  VisualStudioCode.exe  DonkeyKong.exe  newfolder"
             },
             "C:/applications/newfolder/": {
                 contents: "Github-Desktop"
@@ -133,13 +138,33 @@ const appCreation = createApp({
                 this.textInput = '';
             };
         },
+        mkdir(directory){
+            const folderName = directory.match(/\w+/g)[1]; // Selezione la prima parola subito dopo il "cd";
+            const directoryNewFolder = this.currentDir+"/"+folderName.toLowerCase();
+            const objectIndex = directoryNewFolder.replace("//","/");
+            this.directoryContents[this.currentDir].contents += "  "+folderName; // Aggiunge la cartella tra i contents della directory corrente.
+            this.directoryContents[objectIndex+"/"] = {contents: " "}; // Aggiunge l'object che ha come index il percorso per la cartella corretto.
+            localStorage.setItem("directoryContents", this.directoryContents);
+            this.updateCache();
+        },
         isMatch(searchOnString, searchText) { // Funzione per checkare l'esistenza dell'intera parola all'interno di una stringa
             searchText = searchText.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
             return searchOnString.match(new RegExp("\\b"+searchText+"\\b", "i")) != null;
+        },
+        updateCache(){
+            localStorage.setItem("directoryContents", JSON.stringify(this.directoryContents));
+            console.log("Updated");
         }
     },
     mounted() {
+        if (localStorage.getItem("directoryContents") != null) { // Se lo storage "directoryContents" esiste, aggiorna "this.directoryContents"
+            this.directoryContents = JSON.parse(localStorage.getItem("directoryContents"));
+        } else { // Altrimenti
+            localStorage.setItem("directoryContents", JSON.stringify(this.directoryContents)); // Crea lo storage "directoryContents" attribuendogli il valore JSON stringato di this.directoryContents
+        }
         this.createTerminal();
-    }
+    },
+    
 }).mount('#TheRminal')
+
 

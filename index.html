@@ -30,7 +30,7 @@
                     <p>{{terminal}} ~ % 
                         <i :class="idling == true ? 'idling':'' "class="fa-solid fa-terminal gray-color"></i>
                     </p>
-                    <textarea placeholder="..." class="bg-transparent border-0 shadow-none flex-grow-1" v-model="textInput" @click="idling=false" @keyup.enter="tryCmd()"></textarea>
+                    <input type="text" placeholder="..." class="bg-transparent border-0 shadow-none flex-grow-1" v-model="textInput" @click="idling=false" @keyup.enter="tryCmd()"></input>
                 </div>
             </div>
         </div>

@@ -58,11 +58,21 @@ const appCreation = createApp({
                 contents:"Applications  Music  Downloads  Documents"
             },
             "C:/applications/": {
-                contents: "Github-Desktop.exe  VisualStudioCode.exe  DonkeyKong.exe  newfolder"
+                contents: "Github-Desktop.exe  VisualStudioCode.exe  DonkeyKong.exe"
             },
-            "C:/applications/newfolder/": {
-                contents: "Github-Desktop"
-            }
+            "C:/applications/": {
+                contents: ""
+            },
+            "C:/music/": {
+                contents: ""
+            },
+            "C:/downloads/": {
+                contents: ""
+            },
+            "C:/documents/": {
+                contents: ""
+            },
+
         }
         ,
         currentDir: "C:/",
@@ -85,7 +95,7 @@ const appCreation = createApp({
                 this.historyChat.push("'"+this.textInput.trim()+"' does not exists as a command. Try to write 'help'");
             }
             this.commandFound = false;
-            this.textInput = "";
+            this.textInput = '';
         },
         createTerminal() {
             this.terminal = (this.character.lastLogin)+" "+this.character.userName+"@"+this.character.machineName;
@@ -109,9 +119,10 @@ const appCreation = createApp({
             this.historyChat.push(this.directoryContents[this.currentDir].contents);
         },
         cd(directory){
+            this.textInput = '';
             const newDir = directory.match(/\w+/g)[1]; // Selezione la prima parola subito dopo il "cd";
             const actualDir = this.directoryContents[this.currentDir].contents.toLowerCase(); // Variabile contentente i contents della directory attuale
-            if (directory.trim() == "cd ..") {
+            if (directory.trim() == "cd .." && this.currentDir != "C:/") {
 
                 this.currentDir = this.currentDir.slice(0, -1); // Rimuove l'ultimo " / "
                 const slashes = (this.currentDir.split("/").length - 1); //3

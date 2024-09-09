@@ -25,15 +25,17 @@ li:hover {
     cursor:pointer;
 }
 
-textarea {
+input {
     height:23px;
     color:rgba(128, 128, 128, 0.8);
     font-size:0.8rem;
     padding: 0 5px;
     resize: none;
+    text-decoration: inherit;
+    text-decoration-color: var(--white-l);
 }
 
-textarea:focus{
+input:focus{
     border: 0 none #FFF;
     overflow: hidden;
     outline:none;

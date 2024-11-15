@@ -7,7 +7,7 @@ const appCreation = createApp({
         return {
         character: {
             lastLogin: "",
-            userName: "maliktm",
+            userName: "antoniostassi",
             machineName: "apple-m3"
         },
         historyChat: [
@@ -29,7 +29,7 @@ const appCreation = createApp({
             },
             {
                 trigger:"github",
-                function:"printSomething('JS Developer: https://github.com/antoniostassi','Illustrator: https://github.com/margheritamottana')",
+                function:"printSomething('JS Developer: https://github.com/antoniostassi')",
                 description:"Creators of The Rminal"
             },
             {
@@ -51,6 +51,11 @@ const appCreation = createApp({
                 trigger:"mkdir",
                 function:"mkdir(this.textInput.trim())",
                 description:"Syntax 'mkdir <foldername>' creates a folder"
+            },
+            {
+                trigger:"clearcache",
+                function:"clearCache()",
+                description:"It will remove all datas you created, deleting your localStorage item."
             }
         ],
         directoryContents: {
@@ -60,17 +65,14 @@ const appCreation = createApp({
             "C:/applications/": {
                 contents: "Github-Desktop.exe  VisualStudioCode.exe  DonkeyKong.exe"
             },
-            "C:/applications/": {
-                contents: ""
-            },
             "C:/music/": {
                 contents: ""
             },
             "C:/downloads/": {
-                contents: ""
+                contents: " "
             },
             "C:/documents/": {
-                contents: ""
+                contents: "null"
             },
 
         }
@@ -100,11 +102,8 @@ const appCreation = createApp({
         createTerminal() {
             this.terminal = (this.character.lastLogin)+" "+this.character.userName+"@"+this.character.machineName;
         },
-        printSomething(arg, arg2, arg3, arg4) {
+        printSomething(arg) {
             this.historyChat.push(arg);
-            this.historyChat.push(arg2);
-            this.historyChat.push(arg3);
-            this.historyChat.push(arg4);
         },
         clearChat() {
             this.historyChat = [];
@@ -117,6 +116,7 @@ const appCreation = createApp({
         },
         ls(){
             this.historyChat.push(this.directoryContents[this.currentDir].contents);
+            console.log(this.directoryContents);
         },
         cd(directory){
             this.textInput = '';
@@ -165,6 +165,12 @@ const appCreation = createApp({
         updateCache(){
             localStorage.setItem("directoryContents", JSON.stringify(this.directoryContents));
             console.log("Updated");
+        },
+        clearCache() {
+            localStorage.removeItem('directoryContents');
+            console.log("Cache cleaned successfully");
+            location.reload(); // Refresh the page.
+            this.historyChat.push('Cache cleaned successfully');
         }
     },
     mounted() {

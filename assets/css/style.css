@@ -6,7 +6,7 @@
 
 body {
     background-color: black;
-    color: #27941f;
+    color: #8840B8;
 }
 
 ul {
@@ -80,11 +80,38 @@ li > i {
     animation: lampeggia 1s infinite;
 }
 
+.logo-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    animation: fadeIn 1s ease-in-out;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+.logo-img {
+    width: 300px;
+    height: auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
 /* Query */
 @font-face {
     font-family: 'Hack'; /*a name to be used later*/
     src: url('./fonts/Hack-Regular.ttf'); /*URL to font*/
 }
+
+
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
 
 @keyframes lampeggia {
     0% { 

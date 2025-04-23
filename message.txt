@@ -1,0 +1,111 @@
+**Un compagno di squadra sta per commettere un errore fatale durante una riparazione critica. Cosa fai?**
+
+	A) Lo correggo subito, anche se lo umilio di fronte agli altri.
+	B) Aspetto che sbagli per poi intervenire e guadagnare il merito.
+	C) Lo aiuto discretamente, evitando che perda credibilità.
+	D) Lo lascio sbagliare: la selezione naturale farà il resto.
+
+**Se il Consiglio ti affidasse una missione rischiosa, sapendo che potresti non tornare, cosa faresti?**
+
+	A) Accetto senza esitazione: meglio morire utile che vivere senza scopo.
+	B) Cerco di convincere qualcun altro a prendere il mio posto.
+	C) Accetto, ma solo se posso scegliere il mio equipaggiamento.
+	D) Rifiuto: la mia vita è più importante della missione.
+
+**_Domande su eventi accaduti nel bunker_**
+
+**Durante la crisi della ventilazione, quale sistema secondario è stato usato per filtrare l’aria temporaneamente?**
+
+	A) Il sistema di raffreddamento del reattore.
+	B) I condotti di emergenza collegati alla serra idroponica.
+	C) Le riserve d’ossigeno dei vecchi moduli criogenici.
+	D) Nessuno, siamo rimasti senza ossigeno per 12 ore.
+
+**Chi era l’ultimo ingegnere capo del bunker prima che il Consiglio ne assumesse il controllo?**
+
+	A) Dr. Harlan Voss.
+	B) Comandante Eli Vargas.
+	C) Nessuno lo sa, i documenti su di lui sono spariti.
+	D) Non c’è mai stato un ingegnere capo, il bunker è stato lasciato incompiuto.
+
+**_Domande su meccanica e ingegneria_**
+
+**Se un generatore al plasma inizia a surriscaldarsi, qual è la prima cosa da fare?**
+
+	A) Raffreddarlo con azoto liquido.
+	B) Scollegare il sistema di alimentazione principale.
+	C) Deviare l’energia su un circuito secondario.
+	D) Aumentare la pressione nei condotti per ridurre il rischio di implosione.
+
+**Quale di questi materiali è il più adatto per isolare un cavo ad alta tensione?**
+
+	A) Rame.
+	B) Polietilene.
+	C) Acciaio al carbonio.
+	D) Titanio.
+
+**_Domande di cultura generale (con inganni)_**
+
+**Qual è il gas più abbondante nell’atmosfera terrestre?**
+
+	A) Ossigeno.
+	B) Azoto.
+	C) Anidride carbonica.
+	D) Idrogeno.  
+_(Inganno: Molti potrebbero dire ossigeno, ma la risposta corretta è azoto - circa il 78% dell’atmosfera.)_
+
+**Quale di questi metalli arrugginisce più velocemente se esposto all’acqua?**
+
+	A) Alluminio.
+	B) Rame.
+	C) Ferro.
+	D) Argento.  
+_(Inganno: L’alluminio si ossida rapidamente ma forma uno strato protettivo, mentre il ferro arrugginisce pesantemente.)_
+
+ **_Domande trappola e di difficoltà elevata_**
+
+**Se un motore si blocca per attrito eccessivo, quale metodo è più efficace per risolvere il problema?**
+
+	A) Aggiungere olio lubrificante.
+	B) Raffreddare il motore prima di riavviarlo.
+	C) Aumentare la tensione per forzare la rotazione.
+	D) Smontarlo e riparare le componenti usurate.  
+_(Inganno: Molti direbbero A, ma se le componenti sono già danneggiate, la risposta corretta è D.)_
+
+**Qual è il principale svantaggio di usare energia solare in ambienti sotterranei?**
+
+	A) La temperatura eccessiva può danneggiare i pannelli.
+	B) L’energia generata è troppo instabile per essere immagazzinata.
+	C) Non ricevendo luce solare, è impossibile usarla direttamente.
+	D) Le batterie si esauriscono troppo rapidamente.  
+_(Inganno: La risposta più ovvia è C, ma molti potrebbero cadere nel tranello delle altre opzioni.)_
+
+**Nel bunker, quale risorsa è stata sacrificata per mantenere attivo il sistema idrico?**
+
+	A) Le riserve di carburante.
+	B) L’energia del reattore principale.
+	C) L’ossigeno disponibile.
+	D) Il sistema di filtraggio dell’aria.
+
+**_Domande finali per testare il pensiero critico_**
+
+**Perché la pioggia tossica non è evaporata nel tempo?**
+
+	A) La contaminazione si rigenera attraverso il suolo.
+	B) L’atmosfera è diventata instabile e la trattiene.
+	C) Le piogge sono controllate artificialmente da un sistema ignoto.
+	D) È una conseguenza dell’evoluzione chimica post-catastrofe.
+
+**Se fossi bloccato in un bunker senza acqua potabile, quale sarebbe la miglior strategia di sopravvivenza?**
+
+	A) Bere piccole quantità di acqua contaminata per abituare il corpo.
+	B) Tentare di purificare l’acqua con il fuoco.
+	C) Consumare meno cibo per rallentare la disidratazione.
+	D) Riciclare i liquidi corporei tramite filtrazione.
+
+**L’IA del bunker sostiene di avere una soluzione per la crisi ambientale, ma i dati mostrano incongruenze. Cosa fai?**
+
+	A) Seguo le istruzioni: l’IA ha sempre ragione.
+	B) Confronto i dati con quelli registrati prima della catastrofe.
+	C) Cerco di disattivare l’IA prima che prenda il controllo.
+	D) Ignoro l’IA e cerco una soluzione alternativa con gli altri sopravvissuti.

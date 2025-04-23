@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Rminal</title>
+    <title>ARCA 2123</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <div id="TheRminal" class="container-fluid p-4 hack-font d-flex">
+    <div class="boot-screen" id="boot-screen">
+        <pre id="boot-log"></pre>
+    </div>
+
+    <div class="d-none" id="logo-screen">
+        <img src="assets/Logo_1shot.png" alt="eDEX-UI Logo" class="logo-img"/>
+    </div>
+
+    <div id="TheRminal" class="container-fluid p-4 hack-font d-flex d-none">
         <div class="col-2 border border-1" @click="idling=true"> 
-            <h1 class="fs-5 m-0 border-bottom ps-2 py-1">The Rminal</h1>
+            <h1 class="fs-5 m-0 border-bottom ps-2 py-1">ARCA 2123</h1>
             <div>
                 <ul class="p-0">
-                    <li><i class="fa-solid fa-terminal"></i>Terminal</li>
-                    <li><i class="fa-solid fa-user-secret" style="margin-right:7.8px;"></i>Character</li>
-                    <li><i class="fa-solid fa-mask"></i>Quests</li>
+                    <li><i class="fa-solid fa-terminal"></i>1Shot - Terminal</li>
+                    <!-- <li><i class="fa-solid fa-user-secret" style="margin-right:7.8px;"></i>Character</li>
+                    <li><i class="fa-solid fa-mask"></i>Quests</li> -->
                 </ul>
             </div>
         </div>
@@ -30,7 +38,7 @@
                     <p>{{terminal}} ~ % 
                         <i :class="idling == true ? 'idling':'' "class="fa-solid fa-terminal gray-color"></i>
                     </p>
-                    <input type="text" placeholder="..." class="bg-transparent border-0 shadow-none flex-grow-1" v-model="textInput" @click="idling=false" @keyup.enter="tryCmd()"></input>
+                    <input type="text" placeholder="..." class="bg-transparent border-0 shadow-none flex-grow-1" v-model="textInput" @click="idling=false" @keyup.enter="tryCmd()" @keydown=""></input>
                 </div>
             </div>
         </div>
